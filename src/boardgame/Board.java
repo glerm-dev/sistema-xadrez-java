@@ -34,4 +34,9 @@ public class Board {
     public Piece piece(Position position){
         return pieces[position.getFileira()][position.getColuna()];
     }
+
+    public void placePiece(Piece piece, Position position){
+        pieces[position.getFileira()][position.getColuna()] = piece;
+        piece.position = position;
+    }
 }
