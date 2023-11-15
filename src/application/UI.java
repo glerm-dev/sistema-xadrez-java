@@ -1,9 +1,27 @@
 package application;
 
+
+import java.util.Scanner;
+
+import javax.management.RuntimeErrorException;
+
 import chess.ChessPiece;
+import chess.ChessPosition;
 
 public class UI {
     
+	public static ChessPosition readChessPosition(Scanner input){
+		try {
+		String s = input.nextLine();
+		char column = s.charAt(0);
+		int row = Integer.parseInt(s.substring(1));
+		return new ChessPosition(column, row);
+		}
+		catch(RuntimeException o){
+			throw new RuntimeErrorException(null, "Error in piece position");
+		}
+	}
+
     public static void printBoard(ChessPiece[][] pieces){
 
         for(int i = 0; i < pieces.length; i++){
@@ -24,4 +42,6 @@ public class UI {
         }
         System.out.print(" ");
     }
+
+	
 }
