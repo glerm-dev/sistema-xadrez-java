@@ -9,7 +9,12 @@ import chess.ChessPiece;
 import chess.ChessPosition;
 
 public class UI {
-    
+
+    public static void clearScreen(){
+        System.out.flush();
+    }
+
+
 	public static ChessPosition readChessPosition(Scanner input){
 		try {
 		String s = input.nextLine();
